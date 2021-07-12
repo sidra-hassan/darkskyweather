@@ -1,12 +1,9 @@
-import React from 'react'
+import React, {Suspense} from 'react'
 import './App.css'
 import PropTypes from 'prop-types'
-import WeatherContainer from '../src/containers/WeatherContainer'
+import WeatherContainer from './containers/WeatherContainer.client'
+import Loader from './components/Loader.server'
 import {geolocated} from 'react-geolocated'
-import {toast} from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-
-toast.configure()
 
 function App ({coords}) {
   return (
@@ -14,7 +11,9 @@ function App ({coords}) {
       <header className='App-header'>
         <h1 className='App-title'>Welcome to DarkSky Weather app</h1>
       </header>
-      <WeatherContainer coords={coords} />
+      <Suspense fallback={<Loader />}>
+        <WeatherContainer coords={coords} />
+      </Suspense>
     </div>
   )
 }
