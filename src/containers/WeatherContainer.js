@@ -14,8 +14,8 @@ const WeatherContainer = ({
   address, loading, lat, lng, locationError, weatherError
 }) => {
   const clearRequests = () => {
-    clearRequest('CLEAR_REQUEST_LOCATION')
-    clearRequest('CLEAR_REQUEST_WEATHER')
+    //clearRequest('CLEAR_REQUEST_LOCATION')
+    //clearRequest('CLEAR_REQUEST_WEATHER')
   }
 
   useEffect(() => {
