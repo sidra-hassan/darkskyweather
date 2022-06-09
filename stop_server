@@ -1,4 +1,5 @@
 #!/bin/bash
 
 pkill -f node
-
+rm -rf /home/ubuntu/darkskyweather/ 
+rm -rf scripts 
